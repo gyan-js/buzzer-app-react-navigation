@@ -1,30 +1,27 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import {View} from 'react-native';
+import HomeScreen from './screen/HomeScreen';
+import BuzzerScreen1 from './screen/BuzzerScreen1';
+import BuzzerScreen2 from './screen/BuzzerScreen2';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
-import HomeScreen from './screen/HomeScreen'
-import BuzzerScreen from './screen/BuzzerScreen'
 
 export default class App extends React.Component {
-  render(){
-    return (
-        <View style={styles.container}>
-        <AppContainer />
-        </View>
-    );
+  render() {
+    return(
+      <View>
+        <AppContainer/>
+        
+      </View>
+    )
   }
 }
 
 var AppNavigator = createSwitchNavigator({
-  HomeScreen :  HomeScreen,
-  BuzzerScreen: BuzzerScreen
-});
+  HomeScreen:HomeScreen,
+  BuzzerScreen1:BuzzerScreen1
+  
+})
 
-const AppContainer =  createAppContainer(AppNavigator);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-});
+
+const AppContainer = createAppContainer(AppNavigator);
